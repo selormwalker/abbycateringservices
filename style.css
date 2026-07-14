@@ -111,7 +111,19 @@ input, textarea, select { font-family: inherit; }
     color: var(--text-light);
 }
 
-/* ---- Preloader ---- */
+/* ---- Preloader & Progress Bar ---- */
+.scroll-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 4px;
+    background: linear-gradient(90deg, var(--gold), var(--gold-light));
+    z-index: 10001;
+    box-shadow: 0 0 10px rgba(198, 166, 100, 0.5);
+    transition: width 0.1s;
+}
+
 .preloader {
     position: fixed;
     inset: 0;
@@ -441,11 +453,19 @@ input, textarea, select { font-family: inherit; }
     background: linear-gradient(135deg, var(--gold), var(--gold-dark));
     color: var(--dark-900);
     box-shadow: 0 4px 20px rgba(198, 166, 100, 0.3);
+    animation: btnPulse 2s infinite;
+}
+
+@keyframes btnPulse {
+    0% { box-shadow: 0 4px 20px rgba(198, 166, 100, 0.3); }
+    50% { box-shadow: 0 4px 30px rgba(198, 166, 100, 0.6); transform: scale(1.02); }
+    100% { box-shadow: 0 4px 20px rgba(198, 166, 100, 0.3); }
 }
 
 .btn-primary:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 35px rgba(198, 166, 100, 0.45);
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 8px 35px rgba(198, 166, 100, 0.5);
+    animation: none;
 }
 
 .btn-outline {

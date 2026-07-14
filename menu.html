@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Full Menu | Abby's Catering Services</title>
+    <meta name="description" content="Explore our complete catering menu featuring exquisite appetizers, decadent main courses, and elegant desserts.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .page-header {
+            padding: 160px 0 80px;
+            text-align: center;
+            background: var(--dark-800);
+            color: var(--text-light);
+        }
+        
+        .full-menu-section {
+            padding: 80px 0;
+            border-bottom: 1px solid rgba(198, 166, 100, 0.1);
+        }
+        
+        .full-menu-section:last-child {
+            border-bottom: none;
+        }
+
+        .menu-category-title {
+            font-family: var(--font-display);
+            font-size: 2.2rem;
+            color: var(--gold);
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .menu-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px 60px;
+        }
+        
+        @media (max-width: 768px) {
+            .menu-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .dietary-tags {
+            display: flex;
+            gap: 8px;
+            margin-top: 8px;
+        }
+        
+        .tag {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            padding: 2px 8px;
+            border-radius: 4px;
+            border: 1px solid var(--gold);
+            color: var(--gold);
+        }
+        
+        .tag.gf { border-color: #5b8c5a; color: #5b8c5a; }
+        .tag.v { border-color: #e3655b; color: #e3655b; }
+        .tag.vg { border-color: #e8a838; color: #e8a838; }
+
+        .download-btn-container {
+            text-align: center;
+            margin-top: 60px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Scroll Progress -->
+    <div class="scroll-progress"></div>
+
+    <!-- Navigation -->
+    <nav id="navbar" class="navbar scrolled">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <span class="logo-icon">A</span>
+                <span class="logo-text">Abby's<span class="logo-accent"> Catering</span></span>
+            </a>
+            <ul id="nav-menu" class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="index.html#about" class="nav-link">About</a></li>
+                <li><a href="index.html#services" class="nav-link">Services</a></li>
+                <li><a href="menu.html" class="nav-link active">Menu</a></li>
+                <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+                <li><a href="index.html#contact" class="nav-link nav-cta">Book Now</a></li>
+            </ul>
+            <button id="nav-toggle" class="nav-toggle" aria-label="Toggle navigation">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="page-header">
+        <div class="container">
+            <div class="section-label section-label-center" data-animate="fade-up">
+                <span class="label-line"></span>
+                <span>Culinary Excellence</span>
+                <span class="label-line"></span>
+            </div>
+            <h1 class="section-title section-title-center" data-animate="fade-up" data-delay="100">
+                Our Signature <em>Menu</em>
+            </h1>
+            <p class="section-subtitle" data-animate="fade-up" data-delay="200">
+                A comprehensive collection of our finest dishes. Every item can be customized to suit your event's theme and dietary requirements.
+            </p>
+        </div>
+    </header>
+
+    <div class="container" style="padding-top: 40px; text-align: center;">
+        <span class="tag gf" style="margin-right:10px;">GF = Gluten Free</span>
+        <span class="tag v" style="margin-right:10px;">V = Vegetarian</span>
+        <span class="tag vg">VG = Vegan</span>
+    </div>
+
+    <!-- Appetizers -->
+    <section class="full-menu-section">
+        <div class="container">
+            <h2 class="menu-category-title" data-animate="fade-up">Hors d'Oeuvres & Starters</h2>
+            <div class="menu-grid">
+                <div class="menu-item" data-animate="fade-up">
+                    <div class="menu-item-header">
+                        <h4>Truffle Bruschetta</h4>
+                        <span class="menu-item-line"></span>
+                        <span class="menu-item-price">$18</span>
+                    </div>
+                    <p>Grilled sourdough, whipped ricotta, black truffle, aged balsamic reduction</p>
+                    <div class="dietary-tags"><span class="tag v">V</span></div>
+                </div>
+                <div class="menu-item" data-animate="fade-up" data-delay="100">
+                    <div class="menu-item-header">
+                        <h4>Prosciutto-Wrapped Figs</h4>
+                        <span class="menu-item-line"></span>
+                        <span class="menu-item-price">$22</span>
+                    </div>
+                    <p>Fresh mission figs, prosciutto di Parma, gorgonzola, honey drizzle</p>
+                    <div class="dietary-tags"><span class="tag gf">GF</span></div>
+                </div>
+                <div class="menu-item" data-animate="fade-up" data-delay="200">
+                    <div class="menu-item-header">
+                        <h4>Seared Scallops</h4>
+                        <span class="menu-item-line"></span>
+                        <span class="menu-item-price">$28</span>
+                    </div>
+                    <p>Pan-seared diver scallops, cauliflower purée, crispy pancetta, micro herbs</p>
+                    <div class="dietary-tags"><span class="tag gf">GF</span></div>
+                </div>
+                <div class="menu-item" data-animate="fade-up" data-delay="300">
+                    <div class="menu-item-header">
+                        <h4>Miniature Crab Cakes</h4>
+                        <span class="menu-item-line"></span>
+                        <span class="menu-item-price">$26</span>
+                    </div>
+                    <p>Lump blue crab, preserved lemon aioli, fresh dill</p>
+                </div>
+                <div class="menu-item" data-animate="fade-up" data-delay="400">
+                    <div class="menu-item-header">
+                        <h4>Watermelon Tartare</h4>
+                        <span class="menu-item-line"></span>
+                        <span class="menu-item-price">$16</span>
+                    </div>
+                    <p>Compressed watermelon, cucumber, mint, yuzu ponzu, rice cracker</p>
+                    <div class="dietary-tags"><span class="tag gf">GF</span><span class="tag vg">VG</span></div>
+                </div>
+                <div class="menu-item" data-animate="fade-up" data-delay="500">
+                    <div class="menu-item-header">
+                        <h4>Artisan Cheese Board</h4>
+                        <span class="menu-item-line"></span>
+                        <span class="menu-item-price">$32</span>
+                    </div>
+                    <p>Curated selection of aged cheeses, house-made crackers, seasonal preserves</p>
+                    <div class="dietary-tags"><span class="tag v">V</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Courses -->
+    <section class="full-menu-section">
+        <div class="container">
+            <h2 class="menu-category-title" data-animate="fade-up">Main Courses</h2>
+            <div class="menu-grid">
+                <div class="menu-item" data-animate="fade-up">
+                    <div class="menu-item-header">
+                        <h4>Filet Mignon</h4>
+                        <span class="menu-item-line"></span>
+                        <span class="menu-item-price">$58</span>
+                    </div>
+                    <p>8oz prime beef tenderloin, truffle mashed potatoes, roasted asparagus, red wine jus</p>
+                    <div class="dietary-tags"><span class="tag gf">GF</span></div>
+                </div>
+                <div class="menu-item" data-animate="fade-up" data-delay="100">
+                    <div class="menu-item-header">
+                        <h4>Pan-Roasted Salmon</h4>
+                        <span class="menu-item-line"></span>
+                        <span class="menu-item-price">$45</span>
+                    </div>
+                    <p>Wild-caught Atlantic salmon, lemon beurre blanc, seasonal vegetables, herb risotto</p>
+                    <div class="dietary-tags"><span class="tag gf">GF</span></div>
+                </div>
+                <div class="menu-item" data-animate="fade-up" data-delay="200">
+                    <div class="menu-item-header">
+                        <h4>Herb-Crusted Rack of Lamb</h4>
+                        <span class="menu-item-line"></span>
+                        <span class="menu-item-price">$62</span>
+                    </div>
+                    <p>New Zealand lamb, rosemary-dijon crust, roasted root vegetables, mint gremolata</p>
+                </div>
+                <div class="menu-item" data-animate="fade-up" data-delay="300">
+                    <div class="menu-item-header">
+                        <h4>Free-Range Chicken Supreme</h4>
+                        <span class="menu-item-line"></span>
+                        <span class="menu-item-price">$38</span>
+                    </div>
+                    <p>Pan-seared chicken breast, wild mushroom velouté, fondant potatoes</p>
+                    <div class="dietary-tags"><span class="tag gf">GF</span></div>
+                </div>
+                <div class="menu-item" data-animate="fade-up" data-delay="400">
+                    <div class="menu-item-header">
+                        <h4>Wild Mushroom Risotto</h4>
+                        <span class="menu-item-line"></span>
+                        <span class="menu-item-price">$38</span>
+                    </div>
+                    <p>Arborio rice, porcini and chanterelle mushrooms, parmesan, white truffle oil</p>
+                    <div class="dietary-tags"><span class="tag gf">GF</span><span class="tag v">V</span></div>
+                </div>
+                <div class="menu-item" data-animate="fade-up" data-delay="500">
+                    <div class="menu-item-header">
+                        <h4>Roasted Cauliflower Steak</h4>
+                        <span class="menu-item-line"></span>
+                        <span class="menu-item-price">$34</span>
+                    </div>
+                    <p>Spiced cauliflower, romesco sauce, toasted almonds, pomegranate seeds</p>
+                    <div class="dietary-tags"><span class="tag gf">GF</span><span class="tag vg">VG</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Desserts -->
+    <section class="full-menu-section">
+        <div class="container">
+            <h2 class="menu-category-title" data-animate="fade-up">Desserts</h2>
+            <div class="menu-grid">
+                <div class="menu-item" data-animate="fade-up">
+                    <div class="menu-item-header">
+                        <h4>Chocolate Fondant</h4>
+                        <span class="menu-item-line"></span>
+                        <span class="menu-item-price">$16</span>
+                    </div>
+                    <p>Valrhona dark chocolate, molten center, vanilla bean ice cream, gold leaf</p>
+                    <div class="dietary-tags"><span class="tag v">V</span></div>
+                </div>
+                <div class="menu-item" data-animate="fade-up" data-delay="100">
+                    <div class="menu-item-header">
+                        <h4>Classic Crème Brûlée</h4>
+                        <span class="menu-item-line"></span>
+                        <span class="menu-item-price">$14</span>
+                    </div>
+                    <p>Vanilla bean custard, caramelized sugar crust, seasonal berries</p>
+                    <div class="dietary-tags"><span class="tag gf">GF</span><span class="tag v">V</span></div>
+                </div>
+                <div class="menu-item" data-animate="fade-up" data-delay="200">
+                    <div class="menu-item-header">
+                        <h4>French Macaron Tower</h4>
+                        <span class="menu-item-line"></span>
+                        <span class="menu-item-price">$24</span>
+                    </div>
+                    <p>Assorted flavors: pistachio, rose, lavender, salted caramel, raspberry</p>
+                    <div class="dietary-tags"><span class="tag gf">GF</span><span class="tag v">V</span></div>
+                </div>
+                <div class="menu-item" data-animate="fade-up" data-delay="300">
+                    <div class="menu-item-header">
+                        <h4>Vegan Lemon Tart</h4>
+                        <span class="menu-item-line"></span>
+                        <span class="menu-item-price">$15</span>
+                    </div>
+                    <p>Almond crust, tangy lemon curd, coconut whipped cream, fresh mint</p>
+                    <div class="dietary-tags"><span class="tag gf">GF</span><span class="tag vg">VG</span></div>
+                </div>
+            </div>
+            
+            <div class="download-btn-container" data-animate="fade-up">
+                <a href="#" class="btn btn-outline">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-right: 8px; vertical-align: middle;"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+                    Download Full PDF Menu
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom" style="justify-content: center; border-top: none;">
+                <p>&copy; 2025 Abby's Catering Services. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

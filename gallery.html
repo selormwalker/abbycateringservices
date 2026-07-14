@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery | Abby's Catering Services</title>
+    <meta name="description" content="Explore our visual portfolio of beautifully catered events, exquisite dishes, and stunning presentations by Abby's Catering Services.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .page-header {
+            padding: 160px 0 80px;
+            text-align: center;
+            background: var(--dark-800);
+            color: var(--text-light);
+        }
+        
+        .gallery-full-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            padding: 40px 0 80px;
+        }
+
+        .gallery-full-item {
+            position: relative;
+            border-radius: 12px;
+            overflow: hidden;
+            height: 350px;
+            box-shadow: var(--shadow-sm);
+        }
+        
+        .gallery-full-item.featured {
+            grid-column: span 2;
+            grid-row: span 2;
+            height: 100%;
+        }
+        
+        .gallery-full-item.tall {
+            grid-row: span 2;
+            height: 100%;
+        }
+
+        .gallery-full-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s var(--ease-out);
+        }
+
+        .gallery-full-item:hover img {
+            transform: scale(1.08);
+        }
+
+        .gallery-overlay-text {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 30px;
+            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+            color: var(--text-light);
+            font-family: var(--font-display);
+            font-size: 1.2rem;
+            transform: translateY(20px);
+            opacity: 0;
+            transition: all 0.4s var(--ease-out);
+        }
+        
+        .gallery-full-item:hover .gallery-overlay-text {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        @media (max-width: 900px) {
+            .gallery-full-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .gallery-full-item.featured {
+                grid-column: span 2;
+                grid-row: span 1;
+                height: 350px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .gallery-full-grid {
+                grid-template-columns: 1fr;
+            }
+            .gallery-full-item.featured, .gallery-full-item.tall {
+                grid-column: span 1;
+                grid-row: span 1;
+                height: 300px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav id="navbar" class="navbar scrolled">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <span class="logo-icon">A</span>
+                <span class="logo-text">Abby's<span class="logo-accent"> Catering</span></span>
+            </a>
+            <ul id="nav-menu" class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="index.html#about" class="nav-link">About</a></li>
+                <li><a href="index.html#services" class="nav-link">Services</a></li>
+                <li><a href="menu.html" class="nav-link">Menu</a></li>
+                <li><a href="gallery.html" class="nav-link active">Gallery</a></li>
+                <li><a href="index.html#contact" class="nav-link nav-cta">Book Now</a></li>
+            </ul>
+            <button id="nav-toggle" class="nav-toggle" aria-label="Toggle navigation">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="page-header">
+        <div class="container">
+            <div class="section-label section-label-center" data-animate="fade-up">
+                <span class="label-line"></span>
+                <span>Visual Portfolio</span>
+                <span class="label-line"></span>
+            </div>
+            <h1 class="section-title section-title-center" data-animate="fade-up" data-delay="100">
+                Our <em>Gallery</em>
+            </h1>
+            <p class="section-subtitle" data-animate="fade-up" data-delay="200">
+                Browse through moments of culinary magic, elegant setups, and joyful celebrations we've had the pleasure to cater.
+            </p>
+        </div>
+    </header>
+
+    <!-- Gallery Grid -->
+    <section class="section">
+        <div class="container">
+            <div class="gallery-full-grid">
+                
+                <!-- 1 -->
+                <div class="gallery-full-item featured" data-animate="fade-up">
+                    <img src="images/hero-bg.jpg" alt="Banquet setup" loading="lazy">
+                    <div class="gallery-overlay-text">Elegant Banquet Setting</div>
+                </div>
+
+                <!-- 2 -->
+                <div class="gallery-full-item tall" data-animate="fade-up" data-delay="100">
+                    <img src="images/gallery-wedding-cake.jpg" alt="Wedding Cake" loading="lazy">
+                    <div class="gallery-overlay-text">Custom Wedding Cakes</div>
+                </div>
+
+                <!-- 3 -->
+                <div class="gallery-full-item" data-animate="fade-up" data-delay="200">
+                    <img src="images/gallery-chef-plating.jpg" alt="Chef plating" loading="lazy">
+                    <div class="gallery-overlay-text">Meticulous Plating</div>
+                </div>
+
+                <!-- 4 -->
+                <div class="gallery-full-item" data-animate="fade-up" data-delay="300">
+                    <img src="images/menu-mains.jpg" alt="Fine Dining" loading="lazy">
+                    <div class="gallery-overlay-text">Gourmet Mains</div>
+                </div>
+
+                <!-- 5 -->
+                <div class="gallery-full-item" data-animate="fade-up" data-delay="100">
+                    <img src="images/gallery-cocktail-hour.jpg" alt="Cocktail Hour" loading="lazy">
+                    <div class="gallery-overlay-text">Outdoor Cocktail Hour</div>
+                </div>
+
+                <!-- 6 -->
+                <div class="gallery-full-item" data-animate="fade-up" data-delay="200">
+                    <img src="images/gallery-floral-centerpiece.jpg" alt="Floral centerpiece" loading="lazy">
+                    <div class="gallery-overlay-text">Luxurious Details</div>
+                </div>
+
+                <!-- 7 -->
+                <div class="gallery-full-item" data-animate="fade-up" data-delay="300">
+                    <img src="images/service-private.jpg" alt="Private Dining" loading="lazy">
+                    <div class="gallery-overlay-text">Intimate Gatherings</div>
+                </div>
+
+                <!-- 8 -->
+                <div class="gallery-full-item featured" data-animate="fade-up" data-delay="100">
+                    <img src="images/service-wedding.jpg" alt="Wedding Reception" loading="lazy">
+                    <div class="gallery-overlay-text">Unforgettable Wedding Receptions</div>
+                </div>
+                
+                <!-- 9 -->
+                <div class="gallery-full-item" data-animate="fade-up" data-delay="200">
+                    <img src="images/menu-appetizers.jpg" alt="Appetizers" loading="lazy">
+                    <div class="gallery-overlay-text">Artisan Appetizers</div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to action -->
+    <section class="section section-dark" style="text-align: center;">
+        <div class="container">
+            <h2 class="section-title">Inspired by what you <em>see?</em></h2>
+            <p class="section-subtitle" style="margin-bottom: 40px;">Let's create something equally stunning for your special day.</p>
+            <a href="index.html#contact" class="btn btn-primary">
+                <span>Start Planning Your Event</span>
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom" style="justify-content: center; border-top: none;">
+                <p>&copy; 2025 Abby's Catering Services. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

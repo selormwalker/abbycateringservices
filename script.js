@@ -23,13 +23,24 @@ navLinks.forEach(link => {
     });
 });
 
-// Navbar Scroll Effect
+// Navbar Scroll Effect and Progress Bar
 const navbar = document.getElementById('navbar');
+const progressBar = document.querySelector('.scroll-progress');
+
 window.addEventListener('scroll', () => {
+    // Navbar background
     if (window.scrollY > 50) {
-        navbar.classList.add('scrolled');
+        if(navbar) navbar.classList.add('scrolled');
     } else {
-        navbar.classList.remove('scrolled');
+        if(navbar) navbar.classList.remove('scrolled');
+    }
+
+    // Scroll Progress
+    if (progressBar) {
+        const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+        const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        const scrolled = (winScroll / height) * 100;
+        progressBar.style.width = scrolled + "%";
     }
 });
 
