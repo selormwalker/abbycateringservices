@@ -9,6 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/jpeg" href="images/favicon.jpg">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -695,8 +696,9 @@
                             <textarea id="form-message" name="message" rows="4" placeholder="Share any details about your event, dietary requirements, or special requests..."></textarea>
                         </div>
                         <button type="submit" id="form-submit" class="btn btn-primary btn-full">
-                            <span>Send Inquiry</span>
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
+                            <span id="btn-submit-text">Send Inquiry</span>
+                            <div class="btn-spinner" id="btn-spinner"></div>
+                            <svg id="btn-submit-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
                         </button>
                     </form>
                 </div>

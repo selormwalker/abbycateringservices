@@ -42,6 +42,14 @@ window.addEventListener('scroll', () => {
         const scrolled = (winScroll / height) * 100;
         progressBar.style.width = scrolled + "%";
     }
+
+    // Parallax Effect for Hero
+    const heroBg = document.querySelector('.hero-bg-img');
+    if (heroBg) {
+        const scrolled = window.scrollY;
+        // Move down slightly as we scroll down to create depth
+        heroBg.style.transform = `scale(1.05) translateY(${scrolled * 0.4}px)`;
+    }
 });
 
 // Number Counter Animation
@@ -188,15 +196,21 @@ if (contactForm && formWrapper) {
     contactForm.addEventListener('submit', (e) => {
         e.preventDefault();
         
-        // Show success message
-        formWrapper.innerHTML = `
-            <div class="form-success">
-                <div class="form-success-icon">
-                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--dark-900)" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+        const submitBtn = document.getElementById('form-submit');
+        if (submitBtn) submitBtn.classList.add('loading');
+
+        // Simulate network request
+        setTimeout(() => {
+            // Show success message
+            formWrapper.innerHTML = `
+                <div class="form-success">
+                    <div class="form-success-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--dark-900)" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+                    </div>
+                    <h3>Message Received!</h3>
+                    <p>Thank you for reaching out. Abby's team will get back to you shortly to discuss your event.</p>
                 </div>
-                <h3>Message Received!</h3>
-                <p>Thank you for reaching out. Abby's team will get back to you shortly to discuss your event.</p>
-            </div>
-        `;
+            `;
+        }, 1500);
     });
 }

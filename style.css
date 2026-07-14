@@ -78,6 +78,21 @@ body {
     -moz-osx-font-smoothing: grayscale;
 }
 
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar-track {
+    background: var(--dark-800);
+}
+::-webkit-scrollbar-thumb {
+    background: var(--dark-500);
+    border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: var(--gold-dark);
+}
+
 img {
     max-width: 100%;
     height: auto;
@@ -354,7 +369,8 @@ input, textarea, select { font-family: inherit; }
     height: 100%;
     object-fit: cover;
     transform: scale(1.05);
-    animation: heroZoom 20s ease-in-out infinite alternate;
+    transform-origin: center;
+    will-change: transform;
 }
 
 @keyframes heroZoom {
@@ -1332,10 +1348,33 @@ input, textarea, select { font-family: inherit; }
     margin-top: 8px;
     padding: 18px 36px;
     font-size: 1rem;
+    position: relative;
 }
 
 .contact-form .btn-primary:active {
     transform: scale(0.98);
+}
+
+.btn-spinner {
+    display: none;
+    width: 20px;
+    height: 20px;
+    border: 2px solid rgba(10, 10, 10, 0.3);
+    border-radius: 50%;
+    border-top-color: var(--dark-900);
+    animation: spin 0.8s linear infinite;
+}
+
+.btn-primary.loading .btn-spinner {
+    display: inline-block;
+}
+.btn-primary.loading span,
+.btn-primary.loading svg {
+    display: none;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
 }
 
 /* Form Success */
